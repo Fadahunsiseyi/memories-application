@@ -1,5 +1,5 @@
 import express from 'express';
-import {getPosts, createPosts, updatePost} from '../controller/posts.js'
+import {getPosts, createPosts, updatePost, deletePost, likePost} from '../controller/posts.js'
 
 const router = express.Router();
 
@@ -7,5 +7,6 @@ const router = express.Router();
 router.get('/', getPosts) 
 router.post('/', createPosts) 
 router.patch('/:id', updatePost)
-
-export default router
+router.delete('/:id', deletePost)
+router.patch('/:id/likePost', likePost)
+export default router  
